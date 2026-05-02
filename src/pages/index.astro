@@ -1,22 +1,73 @@
 ---
-import Posts from "@/components/Posts.astro";
-import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
-import Pagination from "@/layouts/components/Pagination.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
+import config from "@/config/config.json";
 
-const posts = await getSinglePage("posts");
-const sortedPosts = sortByDate(posts);
-const totalPages = Math.ceil(posts.length / config.settings.pagination);
-const currentPosts = sortedPosts.slice(0, config.settings.pagination);
+// Get all images from /src/assets/photos/ recursively
+const imageModules = import.meta.glob('/src/assets/photos/**/*.{jpg,jpeg,png,gif,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+const imageUrls = Object.values(imageModules);
+const numImages = imageUrls.length;
+const isSingleImage = numImages === 1;
+const slideDuration = 8; // seconds per slide
+const totalDuration = numImages * slideDuration;
 ---
 
-<Base>
-  <section class="section">
-    <div class="container">
-      <Posts posts={currentPosts} className="mb-16" />
-      <Pagination currentPage={1} totalPages={totalPages} />
+<Base title={config.site.title} description={config.metadata.meta_description}>
+  <section class="slideshow-section">
+    <div class="slideshow-container">
+      {imageUrls.map((url, index) => (
+        <div
+          class={`slide ${isSingleImage ? 'single-slide' : ''}`}
+          style={isSingleImage ? undefined : `animation-delay: ${index * slideDuration}s; animation-duration: ${totalDuration}s;`}
+        >
+          <img src={url} alt={`Photo ${index + 1}`} class="slideshow-image" />
+        </div>
+      ))}
     </div>
   </section>
+
+  <style define:vars={{ 'total-duration': `${totalDuration}s`, 'slide-duration': `${slideDuration}s` }}>
+    .slideshow-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fade var(--total-duration) infinite;
+    }
+
+    .slide.single-slide {
+      opacity: 1;
+      animation: none;
+      z-index: 1;
+    }
+
+    .slideshow-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes fade {
+      0%, 90% { opacity: 1; }
+      95%, 100% { opacity: 0; }
+    }
+  </style>
 </Base>

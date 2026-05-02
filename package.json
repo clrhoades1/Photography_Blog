@@ -1,6 +1,6 @@
 {
-  "name": "bookworm-light-astro",
-  "version": "4.0.2",
+  "name": "stillness-and-wild-blog",
+  "version": "1.0.0",
   "license": "MIT",
   "type": "module",
   "packageManager": "yarn@1.22.22",

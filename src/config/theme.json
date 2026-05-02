@@ -3,10 +3,10 @@
     "default": {
       "theme_color": {
         "primary": "#01AD9F",
-        "body": "#fff",
+        "body": "#FFFCF6",
         "border": "#D5D5D5",
         "light": "#FAFAFA",
-        "dark": "#152035"
+        "dark": "#16252F"
       },
       "text_color": {
         "text": "#747577",

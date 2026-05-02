@@ -3,8 +3,13 @@
   @apply relative flex max-w-[1260px] flex-wrap items-center justify-between;
 }
 
-.navbar-brand img {
-  @apply h-auto max-w-[170px] sm:h-auto sm:max-w-full;
+.navbar-brand img,
+.logo-image {
+  @apply h-auto max-w-full max-h-[60px] object-contain;
+}
+
+.navbar-brand {
+  @apply max-w-[220px];
 }
 
 .navbar-nav {
