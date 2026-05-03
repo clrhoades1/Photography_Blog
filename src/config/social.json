@@ -3,27 +3,17 @@
     {
       "name": "facebook",
       "icon": "FaFacebook",
-      "link": "https://www.facebook.com/"
-    },
-    {
-      "name": "X",
-      "icon": "FaXTwitter",
-      "link": "https://x.com/"
+      "link": "https://www.facebook.com/connor.rhoades.5/"
     },
     {
       "name": "instagram",
       "icon": "FaInstagram",
-      "link": "https://www.instagram.com/"
+      "link": "https://www.instagram.com/connor_rhoades/"
     },
     {
       "name": "linkedin",
       "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/"
-    },
-    {
-      "name": "YouTube",
-      "icon": "FaYoutube",
-      "link": "https://www.youtube.com/"
+      "link": "https://www.linkedin.com/in/connorrhoades/"
     }
   ]
 }

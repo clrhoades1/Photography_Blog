@@ -1,6 +1,9 @@
 # Stillness and Wild Blog
 This repository is for the source code that runs my photography blog, Stillness and Wild. This blog utilizes the base theme created by [Theme Fisher](https://themefisher.com/products/bookworm-light-astro).
 
+## Netlify Project
+https://app.netlify.com/projects/stillnessandwildlife/overview
+
 ### Local setup
 
 After successfully installing those dependencies, open this template with any IDE [[VS Code](https://code.visualstudio.com/) recommended], and then open the integrated terminal in your editor [VS Code shortcut <code>ctrl/cmd+\`</code>]
