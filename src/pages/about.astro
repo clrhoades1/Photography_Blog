@@ -6,6 +6,9 @@ import type { CollectionEntry } from "astro:content";
 import { getEntry, render } from "astro:content";
 
 const entry = (await getEntry("about", "-index")) as CollectionEntry<"about">;
+if (!entry) {
+  throw new Error("About page content not found");
+}
 const { Content } = await render(entry);
 const { title, meta_title, image, what_i_do } = entry.data;
 ---

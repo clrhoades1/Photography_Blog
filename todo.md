@@ -16,7 +16,7 @@ Based on an exploration of the Bookworm Light Astro theme, this is a prioritized
 - **Update or remove sample pages**: Review `src/content/pages/` (e.g., elements.mdx, privacy-policy.md) and replace with your own content or delete if not needed. *Effort: Low (10-15 mins)*
 
 ## 3. Images and Media (Medium Priority - Visual Identity)
-- **Replace placeholder images**: Swap out `public/images/author.png`, `public/images/image-placeholder.png`, and `public/images/logo.png` with your own. For posts, replace images in `public/images/posts/` with high-quality photos. Ensure images are optimized for web (use tools like ImageOptim or Astro's Sharp integration). *Effort: Medium (30-60 mins, plus photo editing)*
+- **Replace placeholder images**: Swap out `public/images/author.JPG`, `public/images/image-placeholder.png`, and `public/images/logo.png` with your own. For posts, replace images in `public/images/posts/` with high-quality photos. Ensure images are optimized for web (use tools like ImageOptim or Astro's Sharp integration). *Effort: Medium (30-60 mins, plus photo editing)*
 - **Add author photos**: Upload real headshots to `public/images/authors/` and update the author Markdown files to reference them. *Effort: Low (10 mins)*
 - **Generate OG images**: Update `public/images/og-image.png` with a custom open-graph image for social sharing (e.g., your blog's logo or a signature photo). *Effort: Low (10-15 mins)*
 

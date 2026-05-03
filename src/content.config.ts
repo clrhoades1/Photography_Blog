@@ -90,6 +90,5 @@ export const collections = {
   posts: postsCollection,
   about: aboutCollection,
   contact: contactCollection,
-  authors: authorsCollection,
   pages: pagesCollection,
 };
